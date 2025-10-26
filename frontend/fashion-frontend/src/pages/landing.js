@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Sparkles, ArrowRight, Zap, Heart, TrendingUp, Shirt, Star } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { FaTshirt } from "react-icons/fa";
 
 export function LandingPage() {
     const [isVisible, setIsVisible] = useState(false);
     const [floatingItems, setFloatingItems] = useState([]);
-
+    const navigate = useNavigate();
     useEffect(() => {
         setIsVisible(true);
        
@@ -96,7 +97,7 @@ export function LandingPage() {
 
                     {/* CTA Button with ripple effect */}
                     <button
-                        onClick={() => alert('Navigate to outfit finder')}
+                        onClick={() => navigate('/outfit-finder')}
                         className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 text-white text-lg font-semibold rounded-full shadow-2xl hover:shadow-purple-500/50 transform hover:scale-105 transition-all duration-300 overflow-hidden animate-bounce-in"
                     >
                         <span className="relative z-10">Get Started</span>
