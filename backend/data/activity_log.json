@@ -77,5 +77,13 @@
       "keyword": "Kool Kids",
       "max_items": 20
     }
+  },
+  {
+    "timestamp": "2025-10-26T03:48:50.103729",
+    "activity": "scrape_requested",
+    "data": {
+      "keyword": "playboi carti",
+      "max_items": 20
+    }
   }
 ]

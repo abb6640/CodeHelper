@@ -116,3 +116,4 @@ def get_trending_styles() -> List[str]:
         "y2k",
         "normcore"
     ]
+

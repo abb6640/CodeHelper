@@ -18,9 +18,10 @@ class GeminiAnalyzer:
         self.base_url = "https://generativelanguage.googleapis.com/v1beta"
         self.model = "gemini-1.5-flash"
         self.prompt = prompt or """
-            you are stylist and 
-            you must find each part of the outfit 
-            that best matches the user's preferences
+            You are a fashion and style expert AI.
+            Provide detailed, personalized fashion advice based on user body shape and preferences.
+            Find individual complementary apparel and make outfit out of said apparel.
+            Categorize the users input into distinct and complementary clothing items.
         """
 
     def analyze_body_shape(self, image_data: bytes, user_style: str) -> Dict:
