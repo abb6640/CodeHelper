@@ -12,6 +12,7 @@ from core.analyzer import generate_pinterest_recommendations
 
 print(generate_pinterest_recommendations("vintage streetwear outfits", max_items=5))
 
+
 app = FastAPI(
     title="FitFindr API",
     description="AI-powered fashion recommendation system",
