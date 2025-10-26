@@ -3,15 +3,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional
 import json
 from core.queryhandler import process_query, validate_user_input
-from core.scraper import scrape_pinterest, get_trending_styles
+from core.scraper import get_trending_styles
 from core.recommender import recommend_outfits, create_outfit_combinations, get_recommendation_summary
 from core.feedback import record_feedback, get_user_feedback, get_trending_items, analyze_feedback_trends
 from core.analyzer import generate_personalized_explanation
 from core.storage import load_json, save_json, log_activity
 from core.analyzer import generate_pinterest_recommendations
-
-print(generate_pinterest_recommendations("vintage streetwear outfits", max_items=5))
-
 
 app = FastAPI(
     title="FitFindr API",
