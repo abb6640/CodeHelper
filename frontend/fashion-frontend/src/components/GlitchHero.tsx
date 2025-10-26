@@ -65,16 +65,7 @@ export function GlitchHero() {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 text-center">
         {/* Gothic badge */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          className="mb-10 inline-flex items-center gap-3 px-5 py-2 rounded border border-red-900/30 bg-black/40 backdrop-blur-md"
-        >
-          <Flame className="w-4 h-4 text-red-500" />
-          <span className="text-zinc-400 text-xs tracking-[0.3em] uppercase">BETA</span>
-          <X className="w-4 h-4 text-zinc-600" />
-        </motion.div>
+
 
         {/* Main Title - High Fashion Typography */}
         <div className="relative mb-12">
@@ -85,7 +76,7 @@ export function GlitchHero() {
           >
             <h1 className="relative mb-4">
               <span className={`block text-[10rem] md:text-[16rem] leading-none tracking-tighter gothic-text ${glitch ? 'animate-glitch-hard' : ''}`}>
-                Fashion
+                Fashion 
               </span>
             </h1>
           </motion.div>
@@ -123,9 +114,12 @@ export function GlitchHero() {
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="px-12 py-5 border border-zinc-700 hover:border-zinc-500 transition-colors uppercase tracking-wider text-sm"
+            className="group relative px-12 py-5 bg-white text-black overflow-hidden"
           >
-            Explore Your Fashion
+            <div className="absolute inset-0 bg-red-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+            <span className="relative z-10 uppercase tracking-wider text-sm group-hover:text-white transition-colors">
+              Explore Your Wardrobe
+            </span>
           </motion.button>
         </motion.div>
 

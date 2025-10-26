@@ -48,11 +48,7 @@ export function OutfitCreator() {
           transition={{ duration: 0.8 }}
           className="text-center mb-24"
         >
-          <div className="inline-block mb-8">
-            <div className="px-6 py-2 border border-zinc-800 bg-black/40 backdrop-blur-sm">
-              <span className="text-zinc-500 tracking-[0.3em] text-xs uppercase">System</span>
-            </div>
-          </div>
+
 
           <h2 className="text-6xl md:text-8xl mb-8 tracking-tighter gothic-text">
             YOUR ARCHIVE
