@@ -13,11 +13,16 @@ from datetime import datetime
 class GeminiAnalyzer:
     """AI analyzer using Google Gemini API."""
     
-    def __init__(self, api_key: Optional[str] = None):
+    def __init__(self, api_key: Optional[str] = None, prompt: Optional[str] = None):
         self.api_key = api_key or os.getenv('GEMINI_API_KEY')
         self.base_url = "https://generativelanguage.googleapis.com/v1beta"
         self.model = "gemini-1.5-flash"
-        
+        self.prompt = prompt or """
+            you are stylist and 
+            you must find each part of the outfit 
+            that best matches the user's preferences
+        """
+
     def analyze_body_shape(self, image_data: bytes, user_style: str) -> Dict:
         """
         Analyze body shape from uploaded image using Gemini Vision.

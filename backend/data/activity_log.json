@@ -34,5 +34,48 @@
       "recommendation_count": 5,
       "outfit_count": 5
     }
+  },
+  {
+    "timestamp": "2025-10-26T02:19:25.882426",
+    "activity": "query_processed",
+    "data": {
+      "user_id": "0a97be5c-2860-4850-addc-5cd325dae40c",
+      "style": "y2k",
+      "has_image": true,
+      "body_shape": "hourglass"
+    }
+  },
+  {
+    "timestamp": "2025-10-26T02:19:25.953807",
+    "activity": "user_query_processed",
+    "data": {
+      "user_id": "0a97be5c-2860-4850-addc-5cd325dae40c",
+      "style": "y2k",
+      "has_image": true
+    }
+  },
+  {
+    "timestamp": "2025-10-26T02:27:21.930132",
+    "activity": "scrape_requested",
+    "data": {
+      "keyword": "y2k fashion",
+      "max_items": 20
+    }
+  },
+  {
+    "timestamp": "2025-10-26T02:39:31.157877",
+    "activity": "scrape_requested",
+    "data": {
+      "keyword": "Playboi Carti Style Street wear",
+      "max_items": 20
+    }
+  },
+  {
+    "timestamp": "2025-10-26T03:41:54.171911",
+    "activity": "scrape_requested",
+    "data": {
+      "keyword": "Kool Kids",
+      "max_items": 20
+    }
   }
 ]
