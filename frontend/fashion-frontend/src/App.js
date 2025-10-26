@@ -1,7 +1,7 @@
 import { Routes, Route, Link } from "react-router-dom";
-import {HomePage} from "./pages/home";
+import {HomePage} from "./pages/landing";
 
-export default function App() {
+export default  function App() {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
