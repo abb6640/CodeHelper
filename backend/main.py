@@ -10,6 +10,13 @@ from core.analyzer import generate_personalized_explanation
 from core.storage import load_json, save_json, log_activity
 from core.analyzer import generate_pinterest_recommendations
 
+#change this in prod
+origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+
+
 app = FastAPI(
     title="FitFindr API",
     description="AI-powered fashion recommendation system",
@@ -20,7 +27,7 @@ app = FastAPI(
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, specify your frontend URL
+    allow_origins=origins,  # In production, specify your frontend URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

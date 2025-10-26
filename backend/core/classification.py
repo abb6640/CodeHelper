@@ -44,15 +44,15 @@ def get_outputs(model:CLIPModel, inputs):return model(**inputs)
 
 
 
-def get_best_label(image, candidate_labels, threshold=0.45):
-    inputs = processor(text=candidate_labels, images=image, return_tensors="pt", padding=True).to(device)
+def get_best_label(url, threshold=0.45):
+    inputs = processor(text=labels, images=get_image_for_classification_from_url(url), return_tensors="pt", padding=True).to(device)
     outputs = model(**inputs)
     logits_per_image = outputs.logits_per_image
     probs = logits_per_image.softmax(dim=1)
 
     best_idx = probs.argmax().item()
     best_prob = probs[0, best_idx].item()
-    best_label = candidate_labels[best_idx]
+    best_label = labels[best_idx]
 
     if best_prob < threshold:
         return "Other", best_prob
