@@ -95,7 +95,7 @@ async def scrape_items_route(payload: dict):
     """Scrape Pinterest for fashion items."""
     try:
         keyword = payload.get("keyword", "vintage streetwear")
-        max_items = payload.get("max_items", 20)
+        max_items = payload.get("max_items", 5)
 
         
         

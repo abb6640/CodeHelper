@@ -276,5 +276,21 @@
       "keyword": "Carti Outfits",
       "max_items": 20
     }
+  },
+  {
+    "timestamp": "2025-10-26T11:51:01.297947",
+    "activity": "scrape_requested",
+    "data": {
+      "keyword": "Carti Outfits",
+      "max_items": 5
+    }
+  },
+  {
+    "timestamp": "2025-10-26T11:53:12.259887",
+    "activity": "scrape_requested",
+    "data": {
+      "keyword": "PlayBoiCarti",
+      "max_items": 5
+    }
   }
 ]
