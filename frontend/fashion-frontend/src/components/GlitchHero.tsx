@@ -76,7 +76,7 @@ export function GlitchHero() {
           >
             <h1 className="relative mb-4">
               <span className={`block text-[10rem] md:text-[16rem] leading-none tracking-tighter gothic-text ${glitch ? 'animate-glitch-hard' : ''}`}>
-                Fashion 
+                FitFinder 
               </span>
             </h1>
           </motion.div>
@@ -97,7 +97,7 @@ export function GlitchHero() {
           className="space-y-4 mb-16"
         >
           <p className="text-2xl md:text-4xl tracking-tight text-zinc-300 uppercase">
-            Digital Wardrobe
+            Digital Wardrobe Creator
           </p>
           <p className="text-lg text-zinc-500 max-w-2xl mx-auto">
             Construct your aesthetic. Archive your fits. Elevate your presence.
