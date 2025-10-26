@@ -10,8 +10,6 @@ from core.analyzer import generate_personalized_explanation
 from core.storage import load_json, save_json, log_activity
 from core.analyzer import generate_pinterest_recommendations
 
-print(generate_pinterest_recommendations("vintage streetwear outfits", max_items=5))
-
 app = FastAPI(
     title="FitFindr API",
     description="AI-powered fashion recommendation system",

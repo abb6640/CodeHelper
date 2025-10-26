@@ -169,5 +169,193 @@
       "keyword": "y2k outfits",
       "max_items": 20
     }
+  },
+  {
+    "timestamp": "2025-10-26T08:33:46.078835",
+    "activity": "scrape_requested",
+    "data": {
+      "keyword": "Carti Outfits",
+      "max_items": 20
+    }
+  },
+  {
+    "timestamp": "2025-10-26T08:33:46.273846",
+    "activity": "scrape_error",
+    "data": {
+      "error": "'NoneType' object is not subscriptable"
+    }
+  },
+  {
+    "timestamp": "2025-10-26T08:35:01.566199",
+    "activity": "scrape_requested",
+    "data": {
+      "keyword": "Carti Outfits",
+      "max_items": 20
+    }
+  },
+  {
+    "timestamp": "2025-10-26T08:35:01.710764",
+    "activity": "scrape_error",
+    "data": {
+      "error": "'NoneType' object is not subscriptable"
+    }
+  },
+  {
+    "timestamp": "2025-10-26T08:36:16.094781",
+    "activity": "scrape_requested",
+    "data": {
+      "keyword": "Carti Outfits",
+      "max_items": 20
+    }
+  },
+  {
+    "timestamp": "2025-10-26T08:36:16.234376",
+    "activity": "scrape_error",
+    "data": {
+      "error": "'NoneType' object is not subscriptable"
+    }
+  },
+  {
+    "timestamp": "2025-10-26T08:38:51.153889",
+    "activity": "scrape_requested",
+    "data": {
+      "keyword": "Carti Outfits",
+      "max_items": 20
+    }
+  },
+  {
+    "timestamp": "2025-10-26T08:38:51.337561",
+    "activity": "scrape_error",
+    "data": {
+      "error": "'NoneType' object is not subscriptable"
+    }
+  },
+  {
+    "timestamp": "2025-10-26T08:41:27.726360",
+    "activity": "scrape_requested",
+    "data": {
+      "keyword": "Carti Outfits",
+      "max_items": 20
+    }
+  },
+  {
+    "timestamp": "2025-10-26T08:41:27.869846",
+    "activity": "scrape_error",
+    "data": {
+      "error": "'NoneType' object is not subscriptable"
+    }
+  },
+  {
+    "timestamp": "2025-10-26T08:46:17.447341",
+    "activity": "scrape_requested",
+    "data": {
+      "keyword": "Carti Outfits",
+      "max_items": 20
+    }
+  },
+  {
+    "timestamp": "2025-10-26T08:46:19.135112",
+    "activity": "scrape_error",
+    "data": {
+      "error": "get_best_label() missing 1 required positional argument: 'url'"
+    }
+  },
+  {
+    "timestamp": "2025-10-26T08:47:49.855210",
+    "activity": "scrape_requested",
+    "data": {
+      "keyword": "Carti Outfits",
+      "max_items": 20
+    }
+  },
+  {
+    "timestamp": "2025-10-26T08:48:37.246178",
+    "activity": "scrape_error",
+    "data": {
+      "error": "cannot identify image file <_io.BytesIO object at 0x7fa8ef1135b0>"
+    }
+  },
+  {
+    "timestamp": "2025-10-26T09:42:32.101774",
+    "activity": "scrape_requested",
+    "data": {
+      "keyword": "Carti Outfits",
+      "max_items": 20
+    }
+  },
+  {
+    "timestamp": "2025-10-26T09:42:37.289246",
+    "activity": "scrape_error",
+    "data": {
+      "error": "CLIPModel.forward() got an unexpected keyword argument 'text'"
+    }
+  },
+  {
+    "timestamp": "2025-10-26T09:43:40.805124",
+    "activity": "scrape_requested",
+    "data": {
+      "keyword": "Carti Outfits",
+      "max_items": 20
+    }
+  },
+  {
+    "timestamp": "2025-10-26T09:43:46.017835",
+    "activity": "scrape_error",
+    "data": {
+      "error": "CLIPModel.forward() got an unexpected keyword argument 'text'"
+    }
+  },
+  {
+    "timestamp": "2025-10-26T09:45:13.762731",
+    "activity": "scrape_requested",
+    "data": {
+      "keyword": "Carti Outfits",
+      "max_items": 20
+    }
+  },
+  {
+    "timestamp": "2025-10-26T09:45:16.902541",
+    "activity": "scrape_error",
+    "data": {
+      "error": "CLIPModel.forward() got an unexpected keyword argument 'text'"
+    }
+  },
+  {
+    "timestamp": "2025-10-26T09:45:48.740249",
+    "activity": "scrape_requested",
+    "data": {
+      "keyword": "Carti Outfits",
+      "max_items": 20
+    }
+  },
+  {
+    "timestamp": "2025-10-26T09:45:51.970251",
+    "activity": "scrape_error",
+    "data": {
+      "error": "CLIPModel.forward() got an unexpected keyword argument 'text'"
+    }
+  },
+  {
+    "timestamp": "2025-10-26T09:48:19.573270",
+    "activity": "scrape_requested",
+    "data": {
+      "keyword": "Carti Outfits",
+      "max_items": 20
+    }
+  },
+  {
+    "timestamp": "2025-10-26T09:48:23.898798",
+    "activity": "scrape_error",
+    "data": {
+      "error": "Invalid URL 'Shirts': No scheme supplied. Perhaps you meant https://Shirts?"
+    }
+  },
+  {
+    "timestamp": "2025-10-26T09:50:02.470747",
+    "activity": "scrape_requested",
+    "data": {
+      "keyword": "Carti Outfits",
+      "max_items": 20
+    }
   }
 ]
