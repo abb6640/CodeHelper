@@ -20,14 +20,17 @@ export function OutfitPickerPage() {
 
     try {
       console.log("Form submitted with value:", value);
+      let url =  process.env.REACT_APP_API_BASE_URL + "/scrape"
+      console.log(url)
       let res = await fetch(
-        process.env.REACT_APP_API_BASE_URL + "/scrape",
+       url,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ keyword: value }),
         }
       );
+      console.log(res)
 
       if (!res.ok) throw new Error("Failed to fetch recommendations");
 

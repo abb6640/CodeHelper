@@ -21,7 +21,7 @@ AI-powered fashion recommendation system backend built with FastAPI.
 
 2. **Install dependencies:**
    ```bash
-   pip install fastapi uvicorn python-multipart requests beautifulsoup4
+   pip install fastapi uvicorn python-multipart requests beautifulsoup4 pillow transformerd torch
    ```
 
 3. **Start the server:**

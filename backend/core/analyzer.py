@@ -11,6 +11,7 @@ import requests
 from datetime import datetime
 
 from core.scraper import PinterestScraper
+from core.classification import get_best_label
 
 class GeminiAnalyzer:
     """AI analyzer using Google Gemini API."""
@@ -389,7 +390,12 @@ def generate_personalized_explanation(user_profile: Dict, recommendations: List[
 
 # Note that the following function has been added to integrate GeminiAnalyzer with PinterestScraper
 # A default prompt is provided if none is given.
-def generate_pinterest_recommendations(user_request: str, max_items: int = 5, items_per_request: int = 1, gen_analyzer: GeminiAnalyzer = GeminiAnalyzer(model="gemini-2.0-flash-lite")) -> List[Dict]:
+def generate_pinterest_recommendations(user_request: str, 
+                                       max_items: int = 5, 
+                                       items_per_request: int = 1, 
+                                       gen_analyzer: GeminiAnalyzer = GeminiAnalyzer(model="gemini-2.0-flash-lite"),
+                                       scraper= PinterestScraper()
+                                       ) -> List[Dict]:
     """
         Note that the following function has been added to integrate GeminiAnalyzer with PinterestScraper
         A default prompt is provided if none is given.
@@ -414,6 +420,14 @@ def generate_pinterest_recommendations(user_request: str, max_items: int = 5, it
     print("Gemini response text: ", gemini_response_text)
     dict_list = []
     for  keyword in gemini_response_text.split(','):
-        dict_list = dict_list + PinterestScraper().scrape_pinterest(keyword.strip(), max_items=items_per_request)
+        scraping = scraper.scrape_pinterest(keyword.strip(), max_items=items_per_request)
+        print(scraping)
+        for response in scraping:
+            #print(response, "hello")
+            label = get_best_label(response["image_url"])
+            response.update({"category":label})
+
+
+        dict_list = dict_list + scraping
    
     return dict_list
