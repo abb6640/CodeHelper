@@ -12,28 +12,25 @@ device = get_device()
 model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32").to(device)
 processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
 labels = [
-    # Upper body
+  
     "T-Shirt", "Shirt", "Blouse", "Tank Top", "Sweater", "Hoodie", "Jacket", "Coat", "Vest", "Cardigan",
     
-    # Lower body
+    
     "Jeans", "Pants", "Shorts", "Skirt", "Leggings", "Trousers",
     
-    # Full body
     "Dress", "Jumpsuit", "Romper", "Overalls", "Suit", "Bikini",
     
-    # Footwear
     "Shoes", "Sneakers", "Boots", "Heels", "Sandals", "Flip Flops", "Loafers",
     
-    # Accessories
+ 
     "Bag", "Backpack", "Handbag", "Wallet", "Belt", "Scarf", "Tie", "Watch",
     
-    # Headwear
+
     "Hat", "Cap", "Beanie", "Headband", "Hair Clip",
     
-    # Jewelry
+   
     "Necklace", "Earrings", "Bracelet", "Ring", "Brooch",
     
-    # Eyewear
     "Glasses", "Sunglasses"
 ]
 unknown_label = "Other"
