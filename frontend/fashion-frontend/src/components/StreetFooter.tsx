@@ -70,7 +70,7 @@ export function StreetFooter() {
         {/* Bottom */}
         <div className="pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-zinc-700 text-xs uppercase tracking-widest">
-            © {currentYear} Forge
+            © {currentYear} FitFinder
           </p>
           
           <p className="text-zinc-800 text-xs tracking-widest">
