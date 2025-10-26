@@ -33,6 +33,7 @@ class PinterestScraper:
         Returns structured data usable by FitFindr backend.
         """
         try:
+            print("🔑 Using Scrape Creators API")
             params = {"query": keyword, "trim": "true"}
             print(f"🔍 Querying Pinterest API for: {keyword}")
 

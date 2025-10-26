@@ -10,19 +10,16 @@ from typing import Dict, List, Optional, Tuple
 import requests
 from datetime import datetime
 
+from core.scraper import PinterestScraper
+
 class GeminiAnalyzer:
     """AI analyzer using Google Gemini API."""
     
-    def __init__(self, api_key: Optional[str] = None, prompt: Optional[str] = None):
+    def __init__(self, api_key: Optional[str] = None, model: str = "gemini-1.5-flash"):
         self.api_key = api_key or os.getenv('GEMINI_API_KEY')
         self.base_url = "https://generativelanguage.googleapis.com/v1beta"
-        self.model = "gemini-1.5-flash"
-        self.prompt = prompt or """
-            You are a fashion and style expert AI.
-            Provide detailed, personalized fashion advice based on user body shape and preferences.
-            Find individual complementary apparel and make outfit out of said apparel.
-            Categorize the users input into distinct and complementary clothing items.
-        """
+        self.model = model
+
 
     def analyze_body_shape(self, image_data: bytes, user_style: str) -> Dict:
         """
@@ -388,3 +385,35 @@ def generate_personalized_explanation(user_profile: Dict, recommendations: List[
     """Generate personalized style explanation."""
     analyzer = GeminiAnalyzer()
     return analyzer.generate_style_explanation(user_profile, recommendations)
+
+
+# Note that the following function has been added to integrate GeminiAnalyzer with PinterestScraper
+# A default prompt is provided if none is given.
+def generate_pinterest_recommendations(user_request: str, max_items: int = 5, items_per_request: int = 1, gen_analyzer: GeminiAnalyzer = GeminiAnalyzer(model="gemini-2.0-flash-lite")) -> List[Dict]:
+    """
+        Note that the following function has been added to integrate GeminiAnalyzer with PinterestScraper
+        A default prompt is provided if none is given.
+    """
+    prompt =  f"""
+            You are a fashion and style expert AI.
+            Provide detailed, personalized fashion advice based on user body shape and preferences.
+            Find individual complementary apparel and make outfit out of said apparel.
+            Categorize the users input into distinct and complementary clothing items, 
+            and generate key words seperates by commas for each item. Generate {max_items} 
+            or less keywords. Here is what the user is looking for: ${user_request}. 
+            HERE ARE THE HARD GUILDELINES FOR YOUR RESPONSE: 
+            1. ONLY RESPOND WITH KEYWORDS SEPERATED BY COMMAS.
+            2. ONLY RETURN THE KEYWORDS, NO ADDITIONAL TEXT OR FORMATTING.
+            3. EACH KEYWORD CORRESPONDS TO A SINGLE  APPAREL ITEM (eg. "vintage denim jacket", "floral summer dress", "leather ankle boots").
+            4. GENERATE NO MORE THAN {max_items} KEYWORDS.
+            5. ENSURE THE KEYWORDS ARE HIGHLY RELEVANT TO THE USER REQUEST
+            MAKE SURE TO FOLLOW THE GUIDELINES EXACTLY AS STATED.
+        """
+
+    gemini_response_text = gen_analyzer._call_gemini_text(prompt)["candidates"][0]["content"]["parts"][0]["text"]
+    print("Gemini response text: ", gemini_response_text)
+    dict_list = []
+    for  keyword in gemini_response_text.split(','):
+        dict_list = dict_list + PinterestScraper().scrape_pinterest(keyword.strip(), max_items=items_per_request)
+   
+    return dict_list

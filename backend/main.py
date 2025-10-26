@@ -8,11 +8,15 @@ from core.recommender import recommend_outfits, create_outfit_combinations, get_
 from core.feedback import record_feedback, get_user_feedback, get_trending_items, analyze_feedback_trends
 from core.analyzer import generate_personalized_explanation
 from core.storage import load_json, save_json, log_activity
+from core.analyzer import generate_pinterest_recommendations
+
+print(generate_pinterest_recommendations("vintage streetwear outfits", max_items=5))
 
 app = FastAPI(
     title="FitFindr API",
     description="AI-powered fashion recommendation system",
-    version="1.0.0"
+    version="1.0.0",
+    
 )
 
 # Add CORS middleware
@@ -87,10 +91,12 @@ async def scrape_items_route(payload: dict):
     try:
         keyword = payload.get("keyword", "vintage streetwear")
         max_items = payload.get("max_items", 20)
+
+        
         
         log_activity("scrape_requested", {"keyword": keyword, "max_items": max_items})
-        
-        items = scrape_pinterest(keyword, max_items)
+
+        items = generate_pinterest_recommendations(keyword, max_items)
         save_json("items.json", items)
         
         return {
